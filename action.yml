@@ -45,7 +45,7 @@ runs:
 
     - name: terraform-apply // terraform-init
       id: init
-      run: terraform -chdir==${{ inputs.terraform-dir }} init
+      run: terraform -chdir=${{ inputs.terraform-dir }} init
       shell: bash
 
     - name: terraform-apply // download-plan
