@@ -55,5 +55,5 @@ runs:
 
     - name: terraform-apply // execute
       id: apply
-      run: terraform -chdir=${{ inputs.terraform-dir }} apply --auto-approve ${{ inputs.artifact-name }}
+      run: terraform -chdir=${{ inputs.terraform-dir }} apply --auto-approve ../${{ inputs.artifact-name }}
       shell: bash
