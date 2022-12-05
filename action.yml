@@ -52,8 +52,9 @@ runs:
       uses: actions/download-artifact@v3
       with:
         name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.terraform-dir }}/plan.tfplan
 
     - name: terraform-apply // execute
       id: apply
-      run: terraform -chdir=${{ inputs.terraform-dir }} apply --auto-approve ${{ github.workspace }}/${{ inputs.artifact-name }}
+      run: terraform -chdir=${{ inputs.terraform-dir }} apply --auto-approve plan.tfplan
       shell: bash
